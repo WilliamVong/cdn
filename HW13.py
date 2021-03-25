@@ -35,17 +35,16 @@ print(squares(15)) #1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 22
 print(squares(17)) #1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289
 
 #Finds Every integer that is a Perfect Square Between n and 1   
+#Finds Every integer that is a Perfect Square Between n and 1  and adds them
 def sum_perf_sqs(n):
-    output2 = ""
+    output2 = 0
     while n > 1:
         if (n ** 0.5) % 1 == 0:
-            output2 += (str(int(n ** 0.5)) + ": " + str(n) + "\n")
+            output2 +=  n
             n = n - 1
         else:
             n = n - 1
-    if n == 1:
-        output2 +=  "1: 1\n"
-    return output2
+    return output2 + 1
 
 print(sum_perf_sqs(5)) #4, 1
 print(sum_perf_sqs(16)) #16, 9, 4, 1
@@ -71,7 +70,7 @@ print(add_mult_html(3,6)) #9, 18
 print(add_mult_html(2,2)) #4, 4
 print(add_mult_html(1,10)) #11, 10
 
-#Prints a HTML code of the Addition of a and b and the Product of a and b in Table Form
+#returns html code of a table of every integer, its square and the sum of its digits up to and including n
 def tablefy (n):
     i = 1
     output1 = ''
